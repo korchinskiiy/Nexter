@@ -1,0 +1,68 @@
+.realtors {
+    background-color: $color-secondary;
+    grid-column: col-start 7/full-end;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: repeat(4, min-content);
+    grid-row-gap: 3vh;
+
+    @media only screen and (max-width:$medium) {
+        grid-column: 1/-1;
+        grid-template-rows: .5fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (max-width:$small) {
+        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: 1fr;
+        padding-top: 4vh;
+    }
+
+    &__heading-3 {
+        justify-self: center;
+        align-self: end;
+        // font-size: 2rem;
+
+        @media only screen and (max-width:$medium) {
+            grid-column: 1/-1;
+            grid-row: 1/2;
+        }
+    }
+
+    &__profile {
+        display: grid;
+        align-items: center;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(2, max-content);
+
+        @media only screen and (max-width:$medium) {
+            padding-bottom: 3rem;
+            justify-content: center;
+        }
+    }
+
+    &__photo {
+        height: 7rem;
+        width: 7rem;
+
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            display: block;
+        }
+    }
+
+    &__text {
+        grid-column: 2/3;
+        grid-row: 1/span2;
+
+        &--paragraph {
+            text-transform: uppercase;
+            color: $color-grey-light-2;
+            margin-top: -.5rem;
+        }
+    }
+}
